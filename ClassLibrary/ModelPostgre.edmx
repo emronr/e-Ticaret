@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StajModel.Store" Provider="Npgsql" ProviderManifestToken="11.4" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="hampers">
+          <Key>
+            <PropertyRef Name="hamperid" />
+          </Key>
+          <Property Name="hamperid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int4" />
+          <Property Name="productid" Type="int4" />
+          <Property Name="date" Type="timestamp" />
+          <Property Name="quantity" Type="int4" />
+          <Property Name="status" Type="int4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="orderid" />
+          </Key>
+          <Property Name="orderid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int4" />
+          <Property Name="price" Type="float8" />
+          <Property Name="item" Type="int4" />
+          <Property Name="date" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="orderdetail">
+          <Key>
+            <PropertyRef Name="odetailid" />
+          </Key>
+          <Property Name="odetailid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orderid" Type="int4" />
+          <Property Name="userid" Type="int4" />
+          <Property Name="pid" Type="int4" />
+          <Property Name="price" Type="float8" />
+          <Property Name="quantity" Type="int4" />
+          <Property Name="date" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pname" Type="varchar" MaxLength="50" />
+          <Property Name="brand" Type="varchar" MaxLength="50" />
+          <Property Name="comment" Type="varchar" MaxLength="200" />
+          <Property Name="pid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="price" Type="float8" />
+          <Property Name="pimage" Type="varchar" MaxLength="150" />
+          <Property Name="stoch" Type="int4" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="roleid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="surname" Type="varchar" MaxLength="100" />
+          <Property Name="mail" Type="varchar" MaxLength="100" />
+          <Property Name="roleid" Type="int4" />
+          <Property Name="userid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="250" />
+          <Property Name="phone" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="StajModelStoreContainer">
+          <EntitySet Name="hampers" EntityType="Self.hampers" Schema="deneme" store:Type="Tables" />
+          <EntitySet Name="order" EntityType="Self.order" Schema="deneme" store:Type="Tables" />
+          <EntitySet Name="orderdetail" EntityType="Self.orderdetail" Schema="deneme" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="deneme" store:Type="Tables" />
+          <EntitySet Name="role" EntityType="Self.role" Schema="deneme" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="deneme" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StajModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hampers">
+          <Key>
+            <PropertyRef Name="hamperid" />
+          </Key>
+          <Property Name="hamperid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="productid" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="6" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="orderid" />
+          </Key>
+          <Property Name="orderid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="item" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="Double" />
+          <Property Name="pimage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="stoch" Type="Int32" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="roleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="roleid" Type="Int32" />
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="StajEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hampers" EntityType="Self.hampers" />
+          <EntitySet Name="order" EntityType="Self.order" />
+          <EntitySet Name="product" EntityType="Self.product" />
+          <EntitySet Name="role" EntityType="Self.role" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <EntitySet Name="orderdetail" EntityType="StajModel.orderdetail" />
+        </EntityContainer>
+        <EntityType Name="orderdetail">
+          <Key>
+            <PropertyRef Name="odetailid" />
+          </Key>
+          <Property Name="odetailid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderid" Type="Int32" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="6" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StajModelStoreContainer" CdmEntityContainer="StajEntities">
+          <EntitySetMapping Name="hampers">
+            <EntityTypeMapping TypeName="StajModel.hampers">
+              <MappingFragment StoreEntitySet="hampers">
+                <ScalarProperty Name="hamperid" ColumnName="hamperid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order">
+            <EntityTypeMapping TypeName="StajModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product">
+            <EntityTypeMapping TypeName="StajModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="pname" ColumnName="pname" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="pimage" ColumnName="pimage" />
+                <ScalarProperty Name="stoch" ColumnName="stoch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="role">
+            <EntityTypeMapping TypeName="StajModel.role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="role1" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="StajModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderdetail">
+            <EntityTypeMapping TypeName="StajModel.orderdetail">
+              <MappingFragment StoreEntitySet="orderdetail">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+                <ScalarProperty Name="odetailid" ColumnName="odetailid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

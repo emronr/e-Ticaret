@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StajModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="hampers">
+    <Key>
+      <PropertyRef Name="hamperid" />
+    </Key>
+    <Property Name="hamperid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="productid" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="6" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="orderid" />
+    </Key>
+    <Property Name="orderid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="price" Type="Double" />
+    <Property Name="item" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="6" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="Double" />
+    <Property Name="pimage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="stoch" Type="Int32" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="StajEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="hampers" EntityType="Self.hampers" />
+    <EntitySet Name="order" EntityType="Self.order" />
+    <EntitySet Name="product" EntityType="Self.product" />
+    <EntitySet Name="role" EntityType="Self.role" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <EntitySet Name="orderdetail" EntityType="StajModel.orderdetail" />
+  </EntityContainer>
+  <EntityType Name="orderdetail">
+    <Key>
+      <PropertyRef Name="odetailid" />
+    </Key>
+    <Property Name="odetailid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="price" Type="Double" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="6" />
+  </EntityType>
+</Schema>

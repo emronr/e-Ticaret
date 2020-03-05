@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StajCalisma", "StajCalisma\", "{EF1FBB2E-82A2-4157-8FF4-D1B63292F8EC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56852"
+		Debug.AspNetCompiler.PhysicalPath = "StajCalisma\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56852\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56852"
+		Release.AspNetCompiler.PhysicalPath = "StajCalisma\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56852\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56852"
+		SlnRelativePath = "StajCalisma\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{9A41419B-C51A-4894-B9DC-487AFAA8AAB0} = {9A41419B-C51A-4894-B9DC-487AFAA8AAB0}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WcfService", "WcfService\", "{9A41419B-C51A-4894-B9DC-487AFAA8AAB0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56908"
+		Debug.AspNetCompiler.PhysicalPath = "WcfService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56908\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56908"
+		Release.AspNetCompiler.PhysicalPath = "WcfService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56908\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56908"
+		SlnRelativePath = "WcfService\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{77FF2EAF-119F-4A26-A728-A269CB63A9E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF1FBB2E-82A2-4157-8FF4-D1B63292F8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1FBB2E-82A2-4157-8FF4-D1B63292F8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1FBB2E-82A2-4157-8FF4-D1B63292F8EC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1FBB2E-82A2-4157-8FF4-D1B63292F8EC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9A41419B-C51A-4894-B9DC-487AFAA8AAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A41419B-C51A-4894-B9DC-487AFAA8AAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A41419B-C51A-4894-B9DC-487AFAA8AAB0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A41419B-C51A-4894-B9DC-487AFAA8AAB0}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{77FF2EAF-119F-4A26-A728-A269CB63A9E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FF2EAF-119F-4A26-A728-A269CB63A9E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FF2EAF-119F-4A26-A728-A269CB63A9E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FF2EAF-119F-4A26-A728-A269CB63A9E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D32E9187-FE28-4501-8CC0-2DEA26F6AC56}
+	EndGlobalSection
+EndGlobal

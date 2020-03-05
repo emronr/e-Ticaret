@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Staj Project</title>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+ 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+      
+        <main>
+            <div class="header">
+                <ul>
+                    <li><a href="HomePage.aspx">AnaSayfa</a> </li>
+                    <li>
+                        <pre>       </pre>
+                    </li>
+                    <li><a href="Hamper.aspx">Sepetim</a></li>
+                    <li>
+                        <pre>       </pre>
+                    </li>
+                    <li><a href="Order.aspx">Siparişlerim</a></li>
+                    <li>
+                        <pre>       </pre>
+                    </li>
+                    <li><a id="users" runat="server" onserverclick="users_ServerClick" href="#">Kullanıcılar</a> </li> 
+                    <li>
+                        <pre>       </pre>
+                    </li>
+                    <li><a id="product" runat="server" onserverclick="product_ServerClick" href="#">Ürünler</a> </li>
+                    <li>
+                        <pre>       </pre>
+                    </li>
+                    <li><a id="cksYap" runat="server" onserverclick="cksYap_ServerClick" href="#">Çıkış Yap</a></li>
+
+                </ul>
+            </div>
+            <div class="aside"></div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+               
+            </div>
+            <div class="banner">Banner</div>
+            <div class="footer">
+
+                <div class="temizle"></div>
+                <p>
+                    <a href="HomePage.aspx">Anasayfa</a> | <a href="#">Hakkımda</a> | <a href="#">Çalışmalarım</a> | <a href="#">Yazılar</a> |  <a href="#">İletişim</a>
+                </p>
+                <p>
+                    © 2019 Tüm hakları saklıdır.| Tasarım: <a href="http://www.bizdenucuzuyok.com">www.bizdenucuzuyok.com</a>
+                </p>
+                <div class="temizle"></div>
+            </div>
+
+
+        </main>
+    </form>
+</body>
+</html>

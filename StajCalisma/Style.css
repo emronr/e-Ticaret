@@ -1,0 +1,157 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Merriweather Sans', sans-serif;*/
+}
+/*
+ul {
+    background-color: darkred;
+    list-style-type: none;
+    height: 80px;
+    width: 100%;
+}*/
+/*
+    ul a {
+        background-color: ThreeDShadow;
+        background-repeat: no-repeat;
+        background-position: right;
+        padding-right: 32px;
+        padding-left: 32px;
+        display: block;
+        line-height: 80px;
+        text-decoration: none;
+        font-size: 20px;
+       
+    }*/
+
+li {
+    float: left;
+}
+    /*
+li a{
+    text-decoration:none;
+    color:white;
+    padding-right:32px;
+    padding-left:32px;
+    font-size:20px;
+    background-color:ThreeDShadow;
+    background-repeat:no-repeat;
+    display:block;
+    line-height:60px;
+  
+}*/
+    li a:hover {
+        color: silver;
+    }
+
+.orta-sag {
+    float: left;
+    margin: 15px;
+    width: 470px;
+    color: #bbb;
+}
+
+.alt {
+    background: #555;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+    .alt a {
+        color: #fff;
+    }
+
+.temizle {
+    clear: both;
+}
+
+main {
+    display: grid;
+    /*background-image: url(/images/bgimage2.jpeg);*/
+    background-size: cover;
+    background-color: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 5fr 1fr 1fr;
+    grid-gap: 0px;
+    height: 100vh;
+    grid-template-areas: "header" "aside" "icerik" "banner" "alt-alan"
+}
+
+@media(min-width: 1024px) {
+    main {
+        /*background-image: url(/images/bgimage2.jpeg);*/
+        background-size: cover;
+        background-color: none;
+        grid-template-columns: 1fr 20fr 1fr;
+        grid-template-rows: 2fr 16fr 2fr;
+        grid-template-areas: "aside header banner" "aside icerik banner" "aside alt-alan banner"
+    }
+}
+
+    .header {
+        background-color: #4267b2;
+        list-style-type: none;
+        /*height: 80px;
+        width: 100%;
+        margin: 0;*/
+        grid-area: header;
+    }
+
+        .header ul {
+            background-color: #4267b2;
+            list-style-type: none;
+            padding-right: 32px;
+            padding-left: 32px;
+            margin: 0;
+        }
+
+        .header a {
+            background-color: none;
+            background-repeat: no-repeat;
+            background-position: right;
+            /*padding-right: 32px;*/
+            padding-left: 32px;
+            line-height: 60px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            position: center;
+        }
+
+    .aside {
+        /*background-color:red;*/
+        position: fixed;
+        grid-area: aside;
+    }
+
+    .content {
+        background-color: #EBEAEF;
+        grid-area: icerik;
+    }
+
+    .banner {
+        /*background-color:darkred;*/
+        grid-area: banner;
+    }
+
+
+    .footer {
+        grid-area: alt-alan;
+        background: #555;
+        /*padding: 20px;*/
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    main > * {
+        /*background-color:ghostwhite;*/
+        /*font-size: 20px;*/
+    }
+
+
+
+    .footer a {
+        color: #fff;
+    }

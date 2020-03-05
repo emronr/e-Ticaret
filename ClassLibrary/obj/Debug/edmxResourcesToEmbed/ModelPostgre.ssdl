@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StajModel.Store" Provider="Npgsql" ProviderManifestToken="11.4" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="hampers">
+    <Key>
+      <PropertyRef Name="hamperid" />
+    </Key>
+    <Property Name="hamperid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="productid" Type="int4" />
+    <Property Name="date" Type="timestamp" />
+    <Property Name="quantity" Type="int4" />
+    <Property Name="status" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="orderid" />
+    </Key>
+    <Property Name="orderid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="price" Type="float8" />
+    <Property Name="item" Type="int4" />
+    <Property Name="date" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="orderdetail">
+    <Key>
+      <PropertyRef Name="odetailid" />
+    </Key>
+    <Property Name="odetailid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderid" Type="int4" />
+    <Property Name="userid" Type="int4" />
+    <Property Name="pid" Type="int4" />
+    <Property Name="price" Type="float8" />
+    <Property Name="quantity" Type="int4" />
+    <Property Name="date" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pname" Type="varchar" MaxLength="50" />
+    <Property Name="brand" Type="varchar" MaxLength="50" />
+    <Property Name="comment" Type="varchar" MaxLength="200" />
+    <Property Name="pid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="price" Type="float8" />
+    <Property Name="pimage" Type="varchar" MaxLength="150" />
+    <Property Name="stoch" Type="int4" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="surname" Type="varchar" MaxLength="100" />
+    <Property Name="mail" Type="varchar" MaxLength="100" />
+    <Property Name="roleid" Type="int4" />
+    <Property Name="userid" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="250" />
+    <Property Name="phone" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="StajModelStoreContainer">
+    <EntitySet Name="hampers" EntityType="Self.hampers" Schema="deneme" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="deneme" store:Type="Tables" />
+    <EntitySet Name="orderdetail" EntityType="Self.orderdetail" Schema="deneme" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="deneme" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="deneme" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="deneme" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

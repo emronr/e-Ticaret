@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StajModelStoreContainer" CdmEntityContainer="StajEntities">
+    <EntitySetMapping Name="hampers">
+      <EntityTypeMapping TypeName="StajModel.hampers">
+        <MappingFragment StoreEntitySet="hampers">
+          <ScalarProperty Name="hamperid" ColumnName="hamperid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order">
+      <EntityTypeMapping TypeName="StajModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="StajModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="pname" ColumnName="pname" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="pimage" ColumnName="pimage" />
+          <ScalarProperty Name="stoch" ColumnName="stoch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role">
+      <EntityTypeMapping TypeName="StajModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="role1" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="StajModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderdetail">
+      <EntityTypeMapping TypeName="StajModel.orderdetail">
+        <MappingFragment StoreEntitySet="orderdetail">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+          <ScalarProperty Name="odetailid" ColumnName="odetailid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
